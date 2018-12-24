@@ -1,0 +1,22 @@
+// red -> yellow -> green -> magenta -> blue -> white -> black -> idle
+digraph example_fsm
+{
+    label = "RGB LED Finite State Machine";
+
+    stIDLE    -> stIDLE;
+    stIDLE    -> stRED     [label = "next"];
+    stRED     -> stRED;
+    stRED     -> stYELLOW  [label = "next"];
+    stYELLOW  -> stYELLOW;
+    stYELLOW  -> stGREEN   [label = "next"];
+    stGREEN   -> stGREEN;
+    stGREEN   -> stMAGENTA [label = "next"];
+    stMAGENTA -> stMAGENTA;
+    stMAGENTA -> stBLUE    [label = "next"];
+    stBLUE    -> stBLUE;
+    stBLUE    -> stWHITE   [label = "next"];
+    stWHITE   -> stWHITE;
+    stWHITE   -> stBLACK   [label = "next"];
+    stBLACK   -> stBLACK;
+    stBLACK   -> stIDLE    [label = "next"];
+}
